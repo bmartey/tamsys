@@ -1,46 +1,104 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
-    <meta name="author" content="Coderthemes">
 
-    <!-- App Favicon -->
-<link rel="shortcut icon" href="/static/assets/images/favicon.ico">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+  <meta name="author" content="Coderthemes">
 
-    <!-- App title -->
-    <title>TAMSYS</title>
+  <!-- App Favicon -->
+  <link rel="shortcut icon" href="/static/assets/images/favicon.ico">
 
-    <!-- Switchery css -->
-<link href="/static/assets/plugins/switchery/switchery.min.css" rel="stylesheet" />
+  <!-- App title -->
+  <title>Tamsys</title>
 
-    <!-- Bootstrap CSS -->
-<link href="/static/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <!-- DataTables -->
+  <link href="/static/assets/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+  <link href="/static/assets/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+  <!-- Responsive datatable examples -->
+  <link href="/static/assets/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
 
-    <!-- App CSS -->
-<link href="/static/assets/css/style.css" rel="stylesheet" type="text/css" />
-    
+  <!-- Switchery css -->
+  <link href="/static/assets/plugins/switchery/switchery.min.css" rel="stylesheet" />
+  
+  <!-- Bootstrap CSS -->
+  <link href="/static/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+  <!-- App CSS -->
+  <link href="/static/assets/css/style.css" rel="stylesheet" type="text/css" />
+
+  <!--Form Wizard-->
+  <link rel="stylesheet" type="text/css" href="/static/assets/plugins/jquery.steps/demo/css/jquery.steps.css" />
+
   <script src="/static/assets/js/modernizr.min.js"></script>
-  </head>
-  <body>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-    <script>
-      var resizefunc = [];
-    </script>
 
-    <!-- jQuery  -->
-    <!-- <script src="/src/assets/js/jquery.min.js"></script>
-    <script src="/src/assets/js/tether.min.js"></script>
-    
-    <script src="/src/assets/js/bootstrap.min.js"></script>
-    <script src="/src/assets/js/waves.js"></script>
-    <script src="/src/assets/js/jquery.nicescroll.js"></script>
-    <script src="/src/assets/plugins/switchery/switchery.min.js"></script> -->
+</head>
+
+<body class="fixed-left widescreen">
+  <div id="app"></div>
+  <script>
+    var resizefunc = [];
+  </script>
+
+    <script src="/static/assets/js/jquery.min.js"></script>
+    <script src="/static/assets/js/tether.min.js"></script><!-- Tether for Bootstrap -->
+    <script src="/static/assets/js/bootstrap.min.js"></script>
+    <script src="/static/assets/js/detect.js"></script>
+    <script src="/static/assets/js/fastclick.js"></script>
+    <script src="/static/assets/js/jquery.blockUI.js"></script>
+    <script src="/static/assets/js/waves.js"></script>
+    <script src="/static/assets/js/jquery.nicescroll.js"></script>
+    <script src="/static/assets/js/jquery.scrollTo.min.js"></script>
+    <script src="/static/assets/js/jquery.slimscroll.js"></script>
+    <script src="/static/assets/plugins/switchery/switchery.min.js"></script>
+
+    <!-- Required datatable js -->
+    <script src="/static/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="/static/assets/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Buttons examples -->
+    <script src="/static/assets/plugins/datatables/dataTables.buttons.min.js"></script>
+    <script src="/static/assets/plugins/datatables/buttons.bootstrap4.min.js"></script>
+    <script src="/static/assets/plugins/datatables/jszip.min.js"></script>
+    <script src="/static/assets/plugins/datatables/pdfmake.min.js"></script>
+    <script src="/static/assets/plugins/datatables/vfs_fonts.js"></script>
+    <script src="/static/assets/plugins/datatables/buttons.html5.min.js"></script>
+    <script src="/static/assets/plugins/datatables/buttons.print.min.js"></script>
+    <script src="/static/assets/plugins/datatables/buttons.colVis.min.js"></script>
+    <!-- Responsive examples -->
+    <script src="/static/assets/plugins/datatables/dataTables.responsive.min.js"></script>
+    <script src="/static/assets/plugins/datatables/responsive.bootstrap4.min.js"></script>
+
+        <!--Morris Chart-->
+		<!-- <script src="/static/assets/plugins/morris/morris.min.js"></script> -->
+		<!-- <script src="/static/assets/plugins/raphael/raphael-min.js"></script> -->
+
+    <!-- Counter Up  -->
+    <script src="/static/assets/plugins/waypoints/lib/jquery.waypoints.js"></script>
+    <script src="/static/assets/plugins/counterup/jquery.counterup.min.js"></script>
 
     <!-- App js -->
-    <!-- <script src="/src/assets/js/jquery.core.js"></script>
-    <script src="/src/assets/js/jquery.app.js"></script> --> 
+    <script src="/static/assets/js/jquery.core.js"></script>
+    <script src="/static/assets/js/jquery.app.js"></script>
+
+    <!-- Page specific js -->
+    <!-- <script src="/static/assets/pages/jquery.dashboard.js"></script> -->
+    <script type="text/javascript">
+      $(document).ready(function() {
+          $('#datatable').DataTable();
+
+          //Buttons examples
+          var table = $('#datatable-buttons').DataTable({
+              lengthChange: false,
+              buttons: ['copy', 'excel', 'pdf', 'colvis']
+          });
+
+          table.buttons().container()
+                  .appendTo('#datatable-buttons_wrapper .col-md-6:eq(0)');
+      } );
+
+    </script>
+
   </body>
+
 </html>
